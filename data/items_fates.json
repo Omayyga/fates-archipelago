@@ -1,0 +1,138 @@
+{
+  "notes": [
+    "Starter item pool draft.",
+    "IDs, classifications, and item list are not final.",
+    "Progression items are items used by AP logic.",
+    "Useful items are valuable but not required.",
+    "Filler items are safe to miss or receive late."
+  ],
+  "items": [
+    {
+      "id": "iron_sword",
+      "name": "Iron Sword",
+      "category": "weapon",
+      "classification": "filler"
+    },
+    {
+      "id": "steel_sword",
+      "name": "Steel Sword",
+      "category": "weapon",
+      "classification": "filler"
+    },
+    {
+      "id": "killer_lance",
+      "name": "Killer Lance",
+      "category": "weapon",
+      "classification": "useful"
+    },
+    {
+      "id": "dragonstone",
+      "name": "Dragonstone",
+      "category": "weapon",
+      "classification": "useful"
+    },
+    {
+      "id": "heal_staff",
+      "name": "Heal",
+      "category": "staff",
+      "classification": "filler"
+    },
+    {
+      "id": "physic_staff",
+      "name": "Physic",
+      "category": "staff",
+      "classification": "useful"
+    },
+    {
+      "id": "master_seal",
+      "name": "Master Seal",
+      "category": "seal",
+      "classification": "useful"
+    },
+    {
+      "id": "heart_seal",
+      "name": "Heart Seal",
+      "category": "seal",
+      "classification": "useful"
+    },
+    {
+      "id": "partner_seal",
+      "name": "Partner Seal",
+      "category": "seal",
+      "classification": "useful"
+    },
+    {
+      "id": "friendship_seal",
+      "name": "Friendship Seal",
+      "category": "seal",
+      "classification": "useful"
+    },
+    {
+      "id": "eternal_seal",
+      "name": "Eternal Seal",
+      "category": "seal",
+      "classification": "useful"
+    },
+    {
+      "id": "witchs_mark",
+      "name": "Witch's Mark",
+      "category": "dlc_seal",
+      "classification": "useful"
+    },
+    {
+      "id": "dread_scroll",
+      "name": "Dread Scroll",
+      "category": "dlc_seal",
+      "classification": "useful"
+    },
+    {
+      "id": "ebon_wing",
+      "name": "Ebon Wing",
+      "category": "dlc_seal",
+      "classification": "useful"
+    },
+    {
+      "id": "boots",
+      "name": "Boots",
+      "category": "stat_booster",
+      "classification": "useful"
+    },
+    {
+      "id": "energy_drop",
+      "name": "Energy Drop",
+      "category": "stat_booster",
+      "classification": "useful"
+    },
+    {
+      "id": "speedwing",
+      "name": "Speedwing",
+      "category": "stat_booster",
+      "classification": "useful"
+    },
+    {
+      "id": "arms_scroll",
+      "name": "Arms Scroll",
+      "category": "consumable",
+      "classification": "useful"
+    },
+    {
+      "id": "gold_1000",
+      "name": "1000 Gold",
+      "category": "gold",
+      "classification": "filler"
+    },
+    {
+      "id": "gold_5000",
+      "name": "5000 Gold",
+      "category": "gold",
+      "classification": "useful"
+    },
+    {
+      "id": "chest_access",
+      "name": "Chest Access",
+      "category": "progression",
+      "classification": "progression",
+      "notes": "Only needed if chest_access_mode is changed from guaranteed to progression_item."
+    }
+  ]
+}

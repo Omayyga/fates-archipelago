@@ -1,0 +1,37 @@
+game: Fire Emblem Fates Revelation
+name: kasumi
+
+fire_emblem_fates_revelation:
+  route: revelation
+  goal: defeat_anankos
+
+  unit_randomization: randomized
+  weapon_randomization: randomized
+
+  chapter_completion_checks: true
+
+  chest_checks: true
+  chest_mode: archipelago
+  chest_access_mode: guaranteed
+  chest_miss_safety: protect_progression
+
+  shop_checks: true
+  shop_mode: archipelago
+  shop_upgrade_expands_checks: true
+
+  recruitment_checks: true
+  child_unit_checks: true
+  kana_check_mode: shared
+
+  my_castle_checks: true
+  special_class_checks: false
+
+  guaranteed_master_seals: limited
+  dlc_seals_in_pool: true
+
+  death_link: true
+  death_link_mode: any_unit_defeat
+  incoming_deathlink_target: combat_unit_else_random_deployed
+  deathlink_caused_deaths_send_deathlink: false
+
+  release_remaining_checks_on_goal: true

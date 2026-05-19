@@ -1,0 +1,98 @@
+{
+  "notes": [
+    "Starter Revelation location draft.",
+    "This is not a final verified location list.",
+    "Chapter checks are safe starter checks.",
+    "Chest/shop/recruitment checks are placeholders until we verify exact Revelation data."
+  ],
+  "locations": [
+    {
+      "id": "ch07_complete",
+      "name": "Chapter 7 Complete",
+      "type": "chapter",
+      "chapter": "Chapter 7",
+      "missable": false,
+      "auto_check_rule": "on_chapter_clear"
+    },
+    {
+      "id": "ch08_complete",
+      "name": "Chapter 8 Complete",
+      "type": "chapter",
+      "chapter": "Chapter 8",
+      "missable": false,
+      "auto_check_rule": "on_chapter_clear"
+    },
+    {
+      "id": "ch09_complete",
+      "name": "Chapter 9 Complete",
+      "type": "chapter",
+      "chapter": "Chapter 9",
+      "missable": false,
+      "auto_check_rule": "on_chapter_clear"
+    },
+    {
+      "id": "ch10_complete",
+      "name": "Chapter 10 Complete",
+      "type": "chapter",
+      "chapter": "Chapter 10",
+      "missable": false,
+      "auto_check_rule": "on_chapter_clear"
+    },
+    {
+      "id": "ch10_chest_1",
+      "name": "Chapter 10 Chest 1",
+      "type": "chest",
+      "chapter": "Chapter 10",
+      "missable": true,
+      "auto_check_rule": "protect_remote_or_progression_on_chapter_clear",
+      "voucher": "outrealm_token_001"
+    },
+    {
+      "id": "ch10_chest_2",
+      "name": "Chapter 10 Chest 2",
+      "type": "chest",
+      "chapter": "Chapter 10",
+      "missable": true,
+      "auto_check_rule": "protect_remote_or_progression_on_chapter_clear",
+      "voucher": "outrealm_token_002"
+    },
+    {
+      "id": "dawn_armory_l1_slot_1",
+      "name": "Dawn Armory Level 1 Slot 1",
+      "type": "shop",
+      "building": "Dawn Armory",
+      "building_level": 1,
+      "missable": false,
+      "auto_check_rule": "on_purchase",
+      "voucher": "outrealm_token_shop_001"
+    },
+    {
+      "id": "rod_shop_l1_slot_1",
+      "name": "Rod Shop Level 1 Slot 1",
+      "type": "shop",
+      "building": "Rod Shop",
+      "building_level": 1,
+      "missable": false,
+      "auto_check_rule": "on_purchase",
+      "voucher": "outrealm_token_shop_002"
+    },
+    {
+      "id": "recruitment_kana",
+      "name": "Recruitment - Kana",
+      "type": "recruitment",
+      "chapter": "Kana Paralogue",
+      "missable": true,
+      "auto_check_rule": "on_recruitment",
+      "notes": "Male Kana and Female Kana share this single check."
+    },
+    {
+      "id": "goal_defeat_anankos",
+      "name": "Defeat Anankos",
+      "type": "goal",
+      "chapter": "Endgame",
+      "missable": false,
+      "auto_check_rule": "on_goal_completion",
+      "notes": "After this, use built-in Archipelago release behaviour."
+    }
+  ]
+}
