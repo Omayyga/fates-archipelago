@@ -1,7 +1,7 @@
 from BaseClasses import Item, ItemClassification
 
 class fatesItem(Item):
-    game = "Fire Emblem Fates: Revelation"
+    game = "Fire Emblem Fates Revelation"
 
 ITEM_ID_START = 0xFEF000
 # >> starting pool to build skeleton <<

@@ -11,7 +11,7 @@ class fatesWorld(World):
     (As of now a skeleton implementation for testing)
     """
 
-    game = "Fire Emblem Fates: Revelation"
+    game = "Fire Emblem Fates Revelation"
     options_dataclass = fatesOptions
     options: fatesOptions
 
@@ -22,6 +22,7 @@ class fatesWorld(World):
     item_name_groups = itemNameGroups
 
     def create_item(self, name: str) -> fatesItem:
+        """Creates an item by name"""
         item_data = item_table[name]
 
         return fatesItem(
@@ -30,6 +31,11 @@ class fatesWorld(World):
             item_data["id"],
             self.player,
         )
+    
+    def create_items(self) -> None:
+        """Creates the starter world items"""
+        for item_name in item_table:
+            self.multiworld.itempool.append(self.create_item(item_name))
     
     def create_event(self, name: str) -> fatesItem:
         """Creates generation only event item"""

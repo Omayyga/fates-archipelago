@@ -1,7 +1,7 @@
 from BaseClasses import Location
 
 class fatesLocation(Location):
-    game = "Fire Emblem Fates: Revelation"
+    game = "Fire Emblem Fates Revelation"
 
 LOCATION_ID_START = 0xFEF800
 
