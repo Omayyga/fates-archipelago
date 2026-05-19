@@ -25,7 +25,7 @@ location_table = {
 }
 
 event_locations = {
-    "Silent Dragon Kill": None,
+    "Defeat Anankos": None,
 }
 
 locationNameToID = {

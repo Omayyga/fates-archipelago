@@ -1,5 +1,5 @@
 from BaseClasses import ItemClassification, Region
-from  worlds.AutoWorld import World
+from worlds.AutoWorld import World
 
 from .Items import fatesItem, itemNameGroups, itemNameToID, item_table
 from .Locations import fatesLocation, event_locations, locationNameToID, location_table
@@ -12,7 +12,7 @@ class fatesWorld(World):
     """
 
     game = "Fire Emblem Fates: Revelation"
-    option_dataclass = fatesOptions
+    options_dataclass = fatesOptions
     options: fatesOptions
 
     topology_present = True
@@ -86,11 +86,11 @@ class fatesWorld(World):
             lambda state: state.has("Victory", self.player)
         )
 
-    def getFillerItemName(self) -> str:
+    def get_filler_item_name(self) -> str:
         """Returns a safe filler item if AP needs one"""
         return "1000G"
     
-    def fillSlotData(self) -> dict:
+    def fill_slot_data(self) -> dict:
         """
         Send simple slot data to the future fates client.
         Real client will use this later for chest/shop rules, deathlink and release"""
@@ -98,8 +98,8 @@ class fatesWorld(World):
         return {
             "route": "revelation",
             "goal": "defeat_anankos",
-            "chest_miss_safety": self.options.chestMissSafety.current_key,
-            "chest_access_mode": self.options.chestAccessMode.current_key,
+            "chest_miss_safety": self.options.chest_miss_safety.current_key,
+            "chest_access_mode": self.options.chest_access_mode.current_key,
             "death_link": bool(self.options.death_link.value),
             "incoming_death_link_target": self.options.incoming_deathlink_target.current_key,
             "release_remaining": bool(self.options.end_release.value),
