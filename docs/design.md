@@ -8,7 +8,7 @@ The player completes Fates checks such as chapters, chests, shops, recruitments,
 
 ## >> Route?
 
-- Revelation
+- Revelation (including the base chapters as well ofc)
 
 ## >> Goal
 
