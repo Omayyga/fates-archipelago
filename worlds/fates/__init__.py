@@ -41,7 +41,7 @@ class fatesWorld(World):
             created_items.append(self.create_item(item_name))
 
         # >> fill rest with filler <<
-        normal_location_count = len(location_table)
+        normal_location_count = self.get_inc_location_count()
         filler_item_name = self.get_filler_item_name()
 
         while len(created_items) < normal_location_count:
@@ -53,6 +53,18 @@ class fatesWorld(World):
             f"{len(created_items)} items created for {normal_location_count} locations.")
         
         self.multiworld.itempool += created_items
+
+    def get_inc_location_count(self) -> int:
+        """counts how many normal AP locations are enabled for this player"""
+        count = 0
+
+        for location_name, location_data in location_table.items():
+            location_type = location_data["type"]
+
+            if self.should_inc_location(location_type):
+                count += 1
+        
+        return count
     
     def create_event(self, name: str) -> fatesItem:
         """Creates generation only event item"""
@@ -62,6 +74,24 @@ class fatesWorld(World):
             None,
             self.player,
         )
+    
+    def should_inc_location(self, location_type: str) -> bool:
+        if location_type == "Chapter":
+            return bool(self.options.chapter_completion_checks.value)
+
+        if location_type == "Chest":
+            return bool(self.options.chest_checks.value)
+        
+        if location_type == "Shop":
+            return bool(self.options.shop_checks.value)
+        
+        if location_type == "Recruitment":
+            return bool(self.options.recruit_checks.value)
+        
+        if location_type == "my_castle":
+            return bool(self.options.my_castle_checks.value)
+        
+        return True
     
     def create_regions(self) -> None:
         """Creates the starter world regions.
@@ -87,11 +117,16 @@ class fatesWorld(World):
                                     f"but is missing from location_table"
                     )
                 
+                location_type = location_table[location_name]["type"]
+
+                if not self.should_inc_location(location_type):
+                    continue
+                
                 region.locations.append(
                     fatesLocation(
                         self.player,
                         location_name,
-                        location_table[location_name],
+                        location_table[location_name]["code"],
                         region,
                     )
                 )
