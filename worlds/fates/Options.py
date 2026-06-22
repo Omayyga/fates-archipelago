@@ -27,7 +27,7 @@ class chestMissSafety(Choice):
     option_remote_only = 1
     option_protect_progression = 2
     option_all = 3
-    default = 1
+    default = 2
 
 class chestAccessMode(Choice):
     """Controls how chest access is handled when chest checks are enabled"""

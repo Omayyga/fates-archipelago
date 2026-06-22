@@ -1,7 +1,7 @@
 from BaseClasses import ItemClassification, Region
 from worlds.AutoWorld import World
 
-from .Items import fatesItem, itemNameGroups, itemNameToID, item_table
+from .Items import fatesItem, itemNameGroups, itemNameToID, item_table, starter_item_pool
 from .Locations import fatesLocation, locationNameToID, location_table, chapter_clear_events, chapter_region_order, region_locations
 from .Options import fatesOptions
 
@@ -37,7 +37,7 @@ class fatesWorld(World):
         created_items = []
 
         # >> add a copy of each starter item <<
-        for item_name in item_table:
+        for item_name in starter_item_pool:
             created_items.append(self.create_item(item_name))
 
         # >> fill rest with filler <<
