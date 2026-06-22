@@ -242,6 +242,48 @@ def build_region_locations():
 
 region_locations = build_region_locations()
 
+valid_location_types = {
+    "Chapter",
+     "Chest",
+     "Shop",
+     "Recruitment",
+     "MyCastle"
+}
+
+def validate_location_table() -> None:
+    """Validate location metadata so any mistakes are caught early"""
+    seen_codes = {}
+
+    valid_regions = set(chapter_region_order)
+    valid_regions.add("My Castle")
+
+    for location_name, location_data in location_table.items():
+          if "code" not in location_data:
+               raise Exception(f"Location {location_name} is missing a code")
+        
+          if "region" not in location_data:
+               raise Exception(f"Location {location_name} is missing a region")
+        
+          if "type" not in location_data:
+               raise Exception(f"Location {location_name} is missing a type")
+
+          location_code = location_data["code"]
+          region_name = location_data["region"]
+          location_type = location_data["type"]
+
+          if location_code in seen_codes:
+               raise Exception(f"Duplicate location code {location_code} is used by {location_name} and {seen_codes[location_code]}")
+          
+          seen_codes[location_code] = location_name
+
+          if region_name not in valid_regions:
+               raise Exception(f"Location {location_name} has unknown region {region_name}")
+          
+          if location_type not in valid_location_types:
+               raise Exception(f"Location {location_name} has unknown type {location_type}")
+
+validate_location_table()
+
 # >> for region access logic <<
 chapter_clear_events = {
     "Prologue": "Prologue: Ties That Bind Cleared",
